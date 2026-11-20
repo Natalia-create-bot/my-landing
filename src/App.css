@@ -235,6 +235,13 @@ p {
   box-shadow: var(--shadow);
 }
 
+/* Chrome/Opera позволяют картинке перебить aspect-ratio обёртки —
+   фиксируем её высоту через min-height: 0 и обрезку. */
+.products-grid > article > div:first-child {
+  min-height: 0;
+  overflow: hidden;
+}
+
 .products-grid > article img {
   display: block;
   width: 100%;
