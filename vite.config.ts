@@ -5,4 +5,9 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   base: '/my-landing/',
   plugins: [react()],
+  resolve: {
+    // Библиотека подключена симлинком; без dedupe её React 18
+    // попадает в бандл вместе с React 19 приложения.
+    dedupe: ['react', 'react-dom', 'react/jsx-runtime'],
+  },
 })
